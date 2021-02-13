@@ -4,7 +4,12 @@ class QuestionsController < ApplicationController
 
   def answer
     user_input = params[:input]
-    if user_input
-      @output = hi""
+    if user_input == "I am going to work"
+      @output = "Great!"
+    elsif user_input.end_with?("?")
+      @output = "Silly question, get dressed and go to work!"
+    else
+      @output = "I don't care, get dressed and go to work!"
+    end
   end
 end
